@@ -1,0 +1,23 @@
+#####################################################
+How to change GRUB bootloader Default - UBUNTU 23.04
+#####################################################
+if you are using Dual boot like me you will need this ...
+
+
+	sudo vim /etc/default/grub
+
+Find the line that contains
+GRUB_DEFAULT=0
+and set it to
+GRUB_DEFAULT=x
+
+where x is the index of grub menu item to which you would like to boot to by default. Note that the menu items are zero-indexed. That means that the first item in the list is 0 and that the sixth item is actually 5. So to boot to the sixth item in the list, the line would read:
+GRUB_DEFAULT=5
+If you forgot the order of the items, take a look at /boot/grub/grub.cfg. Each menu entry is specified by a line of type:
+menuentry 'Ubuntu' [options] {
+You can also chose the default by the name instead of index, e.g.:
+GRUB_DEFAULT='Ubuntu'
+
+Then build the updated grub menu:
+
+	sudo update-grub
