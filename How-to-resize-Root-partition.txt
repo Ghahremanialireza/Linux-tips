@@ -1,0 +1,7 @@
+#######################################################
+How to resize a Root Partition in Ubuntu (Linux) (GPT)
+#######################################################
+
+follow this step by step
+
+https://dade2.net/kb/how-to-resize-a-root-partition-in-ubuntu/
